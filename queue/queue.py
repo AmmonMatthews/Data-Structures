@@ -40,4 +40,13 @@ class Queue:
         return self.storage.append(value)
 
     def dequeue(self):
-        return self.storage.pop(len(self.storage) - 1)
+        if len(self.storage) > 0:
+            return self.storage.pop(0)
+
+
+q = Queue()
+q.enqueue(10)
+q.enqueue(8)
+q.enqueue(7)
+
+print(q.dequeue())
